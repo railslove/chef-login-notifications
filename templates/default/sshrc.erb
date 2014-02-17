@@ -4,8 +4,8 @@ host=`hostname`
 <% node['login_notifications'].each do |channel, options| %>
   <% case channel %>
     <% when "email" %>
-<%= %Q{echo "user $USER just logged in from $ip on $host" | mail -s #{options['subject']} #{options['recipient']}} %>
+<%= %Q{echo "user $USER just logged in from $ip on $host, is your automation broken?" | mail -s #{options['subject']} #{options['recipient']}} %>
     <% when "hubot" %>
-<%= %Q{curl -sfX POST #{options['hubot_url']}/hubot/say -d message="user $USER just logged in from $ip on $host" -d room="#{options['room_id']}" > /dev/null} %>
+<%= %Q{curl -sfX POST #{options['hubot_url']}/hubot/say -d message="user $USER just logged in from $ip on $host, is your automation broken?" -d room="#{options['room_id']}" > /dev/null} %>
   <% end -%>
 <% end -%>
