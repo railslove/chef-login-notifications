@@ -1,13 +1,7 @@
 # login-notifications cookbook
 
-# Requirements
+you know you should not log into your server via ssh?
+this recipe configures a sshrc file to notify you via email or hubot if a user logs into a server. 
 
-# Usage
+Author: Lars
 
-# Attributes
-
-# Recipes
-
-# Author
-
-Author:: YOUR_NAME (<YOUR_EMAIL>)
