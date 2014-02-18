@@ -6,6 +6,6 @@ host=`hostname`
     <% when "email" %>
 <%= %Q{echo "user $USER just logged in from $ip on $host, is your automation broken?" | mail -s #{options['subject']} #{options['recipient']}} %>
     <% when "hubot" %>
-<%= %Q{curl -sfX POST #{options['hubot_url']}/hubot/say -d message=":bomb: $USER just logged in from $ip on $host, is your automation broken?" -d room="#{options['room_id']}" > /dev/null} %>
+<%= %Q{curl -sfX POST #{options['hubot_url']} -d message=":bomb: $USER just logged in from $ip on $host, is your automation broken?" -d room="#{options['room_id']}" > /dev/null} %>
   <% end -%>
 <% end -%>
